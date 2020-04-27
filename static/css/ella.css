@@ -1,0 +1,87 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.logo{
+    width: 800%;
+    height: 600px;
+    border-top: solid 1px white;
+    border-bottom: solid 1px white;
+}
+img{
+    width: 180px;
+    height: 250px;  
+}
+#contenedor{
+    width: 80%;
+    margin-top: 4%;
+    margin-bottom: 4%;
+    font-size: x-large;  
+}
+h1{
+    font-size: 50px;
+    color: white;
+}
+.texto{
+    color: white;  
+}
+#perfiles{
+   margin-top: 20px;
+   width: 1170px;
+   height: 1000px;
+   display: flex;
+   padding: 10px;
+   flex-direction: row;
+   flex-wrap: wrap;
+   justify-content: space-around;
+   align-items: center;
+   background-color: #f1f1f1;
+   margin-left: 150px;
+   border-radius: 5px;
+   overflow: hidden;
+}
+
+#texto{
+    height: 100px;
+    width: 500px;
+    margin-top: 80%;
+    font-family:Helvetica,Futura,Arial,Verdana,sans-serif;
+    margin-left: 450px;
+    font-size: 50px;
+    text-align: center;
+}
+.navbar{
+    border-bottom: 0.5px solid white;
+}
+.btn{
+    background-color: rgb(197, 192, 192);
+}
+
+/*ESTILO DEL BUSCADOR*/
+.input{
+    border: none;
+    border-radius: 5px;
+    margin-left: 550px;
+}
+.navbar-form {
+    position:absolute;
+    right:120px;
+    top:170px;
+}
+.navbar-form .form-control[type=text] {
+    background: white;
+    display:inline-block;
+    transition: all .5s;
+}
+.navbar-form .form-control[type=text]:focus {
+    background-color: #fff;
+    border-color: #729fcf;
+    color:#333;
+    -webkit-box-shadow: 0 0 5px rgba(252, 252, 252, 0.5);
+    -moz-box-shadow: 0 0 5px rgba(109,207,246,.5);
+    box-shadow: 0 0 5px rgba(109,207,246,.5);
+}
+@media (min-width:1200px) {
+    .navbar-form input.form-control[type=text] { width: 160px; }
+    .navbar-form input.form-control[type=text]:focus { width: 350px; }
+}

@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+<link rel="stylesheet" href="{% static 'css/ella.css' %}">
+
+
+<div id="contenedor">
+    <h1>PRODUCTOS</h1> 
+    <p class="texto"> Para el...</p>
+<!--BUSCADOR / ESTÁ INCOMPLETO-->
+<form class="form-search content-search navbar-form" action="" method="post">
+    {% csrf_token %}
+    <div class="input-group">
+        <input placeholder="Buscar..." class="form-control form-text" type="text" size="15" maxlength="128" style="height: 35px;" />
+        <span class="input-group-btn">
+            <button type="button" class="btn btn-outline-light" data-toggle="button" aria-pressed="false">Buscar</button>
+        </span>
+    </div>
+</form>
+<!--FIN BUSCADOR-->
+</div>
+    
+
+<!--ITERACIÓN DE CARDS DE PRODUCTOS-->
+<div id="perfiles">
+    {% for l in pro %} 
+        <div class="card" style="width:300px;">
+            <img class="card-img-top tamaño" src="../../static/{{ l.imagen.url }}" alt="Card image">
+                <div class="card-body">
+                    <h4 class="card-title">{{ l.nombre }}</h4>
+                    <p class="card-text">{{ l.precio }}€</p>
+                    <a class="btn" href="{% url 'comercio:agregar' l.id %}"><i class="fas fa-cart-arrow-down" style="color: #BA0622;"></i>Comprar</a>
+                </div>
+        </div>
+    {% endfor %}
+    </div>
+    {% endblock %}
+    

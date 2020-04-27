@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/ella.css' %}">
+<link rel="stylesheet" href="{% static 'css/formulario.css' %}">
+<body class="fondo" background="{% static 'img/form.jpg' %}"></body>
+
+<!--FORMULARIO DE CONTACTO-->
+<div class="formulario">
+<form action="#" method="post">
+    <p class="field"><input type="text" name="t1" value="" placeholder="Nombre" ></p>
+    <p class="field"><input type="text" style="margin-bottom:10px;" name="t2" value="" placeholder="Su e-mail" ></p>                          
+    <p class="field"><input type="text"  name="t3" value="" placeholder="Asunto" style="width: 376px;"></p>
+    <p class="field"><textarea name="t4" cols="50" rows="5" placeholder="Escriba su mensaje..." ></textarea> </p>
+    <button class="btn" type="submit" name="enviar">Enviar</button>
+</form>
+</div>
+</body>
+
+{% endblock %}

@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}  
+<link rel="stylesheet" href="{% static 'css/carrito.css' %}">
+<div id="contenedor">
+        <h1 style="color:rgb(117, 114, 114);">PRODUCTOS</h1>
+            <p class="texto" style="color:rgb(117, 114, 114);"> Productos carrito</p>
+
+
+
+
+<div class="card">
+  <div class="card-header">
+    <strong class="card-title" style="color:#7F7F7F;">Listado de Productos</strong>
+  </div>
+  <div class="table-stats order-table ov-h">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>SubTotal</th>
+          <th>Cantidad</th>
+          <th>Producto</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for l in pro %}
+        <tr>
+          <td>{{ l.idPro.nombre }}</td>
+          <td>{{ l.cantidad }}</td>
+          <td>{{ l.subTotal }}</td>
+          <td>
+            <a href="{% url 'comercio:eliminar' l.id %}" <i class="fas fa-trash-alt" style="color: #A6A4A4;"></i></a>
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="pagar" style="margin-left: 890px; color: white;">
+ Total: {{ total }}€
+ <a class="btn"  style="margin-left: 320px; color: white; background-color: rgb(4, 94, 4);" href="{% url 'comercio:pagar' %}">Pagar</a>
+</div>
+{% endblock %}
